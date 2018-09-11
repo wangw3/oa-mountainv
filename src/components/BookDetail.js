@@ -6,18 +6,23 @@ class BookDetail extends Component {
     render() {
         const book = this.props.bookLists[this.props.match.params.list_index] !== undefined ? this.props.bookLists[this.props.match.params.list_index].books[this.props.match.params.book_index] : {};
         return (
-            <div>
-                <Link to='/'> Back </Link>
-                <div>
+            <div class="book-detail">
+                <div className="book-info">
+                    <div className="btn-primary">
+                        <Link to='/'>Back</Link>
+                    </div>
                     <ul>
                         <li>Title: {book.title}</li>
                         <li>Author: {book.author}</li>
+                        <li>Rank: {book.rank}</li>
                         <li>Created date: {book.created_date}</li>
                         <li>ISBN: {book.primary_isbn10}</li>
-                        <li>Rank: {book.rank}</li>
-                        <li><img alt="" src={book.book_image}></img></li>
                         <li><a href={book.amazon_product_url}>Amazon Link</a></li>
+                        <li>AND MORE!</li>
                     </ul>
+                </div>
+                <div className="book-image">
+                    <img alt="" src={book.book_image}></img>
                 </div>
             </div>
         )

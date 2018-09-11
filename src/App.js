@@ -12,8 +12,8 @@ class App extends Component {
     return this.props.bookLists.map((bookList, index1) => {
       return (
         <div key={bookList.list_id}>
-          <div>{bookList.list_name}</div>
-          <ul>
+          <div className="book-list-title">{bookList.list_name}</div>
+          <ul className="book-list">
             <Book
               books={bookList.books}
               index1={index1}
@@ -26,7 +26,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <div>
+        <div className="container">
           {this.renderBookLists()}
         </div>
       </div>

@@ -5,7 +5,7 @@ class Book extends Component {
         const { books, index1 } = this.props;
         return (
             <div>{books.map((book, index2) =>
-                <li key={book.primary_isbn13}>
+                <li className="book-title" key={book.primary_isbn13}>
                     <Link to={`/list/${index1}/book/${index2}`}>
                         {book.title}
                     </Link>
